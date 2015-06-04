@@ -1,0 +1,145 @@
+*{
+	text-decoration:none;
+	padding:0em;
+	margin:0em;
+	outline:0em;
+	box-sizing:border-box;
+	font-family:Calibri;
+	text-align:center;
+}
+
+html{
+	height:100%;
+}
+
+body{
+	height:100%;
+}
+
+#logo{
+	height:5em;
+	width:100%;
+	min-width:13em;
+	text-align:center;
+	background:#005D7E;
+	padding:1em 2em 1em 2em;
+	position:relative;
+	z-index:1em;
+	box-shadow:0em 0em 0.5em #000;
+	min-width:30em;
+}
+
+#contenedor{
+	height:auto;
+	min-height:100%;
+	width:100%;
+	min-width:30em;
+	text-align:center;
+	background:url(../img/f.png);
+	text-align:center;
+}
+
+#contenido{
+	height:auto;
+	max-width:52em;
+	width:80%;
+	min-width:22em;
+	min-height:20em;
+	text-align:center;
+	font-size:1.3em;
+	background:#ddd;
+	display:inline-block;
+	box-shadow:0em 0em 0.5em #000;
+}
+
+HR{
+	opacity:0.7;
+	color:#C6B007;
+	border:solid;
+	border-radius:50%;
+	border-width:0.1em;
+}
+
+#activado{
+	width:50%;
+	height:3em;
+	background:#333;
+	float:left;
+	box-shadow:0em 0em 0.5em #000;
+	padding:0.8em 0em 0em 0em;
+	box-sizing:border-box;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#desactivado{
+	width:50%;
+	height:3em;
+	background:#555;
+	float:left;
+	padding:0.8em 0em 0em 0em;
+	box-sizing:border-box;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#desactivado:hover{
+	width:50%;
+	height:3em;
+	background:#444;
+	float:left;
+	padding:0.8em 0em 0em 0em;
+	box-sizing:border-box;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#caja{
+	width:8.9em;
+	height:8.9em;
+	margin:0.01em;
+	box-sizing:border-box;
+	padding:0.5em;
+	float:left;
+}
+
+#premio{
+	width:7.9em;
+	height:7.9em;
+	background:#fff;
+}
+
+#premio:hover{
+	width:8.5em;
+	height:8.5em;
+	background:#fff;
+	box-shadow:0em 0em 0.5em #000;
+	margin:-0.2em;
+	cursor:pointer;
+}
+
+#DENTRO{
+	height:100%;
+	width:auto;
+	padding:4em 1em 1em 1em;
+	box-sizing:border-box;
+	margin:0 auto;
+	background:#000;
+}
+
+footer{
+	background:#000;
+	width:100%;
+	min-width:13em;
+	bottom:0em;
+	left:0em;
+	height:3em;
+	box-shadow:0em 0em 0.5em #000;
+	color:#fff;
+	padding:1em;
+	min-width:30em;
+	float:left;
+}
