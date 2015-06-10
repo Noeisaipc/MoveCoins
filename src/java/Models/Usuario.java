@@ -20,8 +20,6 @@ public class Usuario{
         private String usuario_apm;
 	private String usuario_User;
 	private String usuario_Clave;
-        private String Direcion;
-        private String telefono;
 	private int usuario_Privilegio;
 
 	public Usuario(){
@@ -49,8 +47,6 @@ public class Usuario{
                 u.setUsuario_apm(rs.getString("Apm"));
                 u.setUsuario_user(rs.getString("NameUser"));
                 //u.setUsuario_direcion(rs.getString("Direcion"));
-                
-                u.setUsuario_telefono(rs.getString("Telefono"));
                 u.setUsuario_clave(rs.getString("Contraseña"));
                 u.setUsuario_privilegio(rs.getInt("Privilegio"));
                 
@@ -83,22 +79,7 @@ public class Usuario{
         
 		 return nombre;
 	}
-        public String getUsuario_Direcion()throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException, InvalidKeyException, InvalidAlgorithmParameterException{
-                String masterPassword = "password";
-            Aes a=new Aes();
-            String dire=this.Direcion;
-            
-            dire=a.decrypt(this.Direcion,masterPassword, "2��\"trh�)6�|R", "q40mTVuvoo1XpEGU");
-		 return dire;
-	}
         
-        public String getUsuario_Telefono() throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException, InvalidKeyException, InvalidAlgorithmParameterException{
-            String masterPassword = "password";
-            Aes a=new Aes();
-            String te=this.telefono;
-            te=a.decrypt(this.telefono,masterPassword, "2��\"trh�)6�|R", "q40mTVuvoo1XpEGU");
-            return te;
-	}
 	public String getUsuario_app()throws NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException, InvalidKeyException, InvalidAlgorithmParameterException{
                 String masterPassword = "password";
             Aes a=new Aes();
@@ -131,12 +112,7 @@ public class Usuario{
 	public void setUsuario_nombre(String usuario_Nombre){
 		 this.usuario_Nombre=usuario_Nombre;
 	}
-        public void setUsuario_direcion(String direcion){
-		 this.Direcion=usuario_Nombre;
-	}
-        public void setUsuario_telefono(String telefono){
-		 this.telefono=telefono;
-	}
+        
 	public void setUsuario_app(String usuario_Apellido){
 		 this.usuario_app=usuario_Apellido;
 	}
