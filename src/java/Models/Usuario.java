@@ -29,11 +29,11 @@ public class Usuario{
   
     public Usuario verificarUsuario(String user, String clave){
         Usuario u=null;
-        Connection cn=null;
+        Helper cn=null;
         PreparedStatement pr=null;
         ResultSet rs=null;
         try{
-            cn=Conexion.getConexion();
+            cn=Helper.getConexion();
             String sql="SELECT * FROM Usuario WHERE NameUser=? AND contraseña=?";
             pr=cn.prepareStatement(sql);
             pr.setString(1, user);
@@ -45,8 +45,7 @@ public class Usuario{
                 u.setUsuario_nombre(rs.getString("Nombre"));
                 u.setUsuario_app(rs.getString("App"));
                 u.setUsuario_apm(rs.getString("Apm"));
-                u.setUsuario_user(rs.getString("NameUser"));
-                //u.setUsuario_direcion(rs.getString("Direcion"));
+                u.setUsuario_user(rs.getString("NameUser")); //u.setUsuario_direcion(rs.getString("Direcion"));
                 u.setUsuario_clave(rs.getString("Contraseña"));
                 u.setUsuario_privilegio(rs.getInt("Privilegio"));
                 
@@ -131,20 +130,20 @@ public class Usuario{
 
     public Boolean RegistrarUsuario(String nombre, String appat, String apmat, String user, String phone, String clave,int privi) {
                
-        Connection cn=null;
+        Helper cn=null;
         PreparedStatement pr=null;
         Boolean a;
         try{
-            cn=Conexion.getConexion();
-            String sql="insert into Usuario (NameUser,Nombre,App,Apm,Telefono,contraseña,Privilegio) values (?,?,?,?,?,?,?)";
+            cn=Helper.getConexion();
+            String sql="insert into Usuario (Email,Password,Nombre,App,Apm,edad) values (?,?,?,?,?,?)";
             pr=cn.prepareStatement(sql);  
             pr.setString(1,user);
-            pr.setString(2,nombre);    
-            pr.setString(3,appat); 
-            pr.setString(4,apmat);    
-            pr.setString(5,phone); 
-            pr.setString(6,clave);    
-            pr.setInt(7,privi); 
+            pr.setString(2,clave);    
+            pr.setString(3,nombre); 
+            pr.setString(4,appat);    
+            pr.setString(5,Apm); 
+            pr.setString(6,edad);    
+             
             pr.executeUpdate();
             return a=true;
             
@@ -166,11 +165,11 @@ public class Usuario{
     
     public void CambiarContraseña(String user, String Clave) {
         Usuario u = null;
-        Connection cn = null;
+        Helper cn = null;
         PreparedStatement pr = null;
         ResultSet rs = null;
         try {
-            cn = Conexion.getConexion();
+            cn = Helper.getConexion();
             String sql = "UPDATE Usuario SET Usuario.contraseña='" + Clave + "' WHERE usuario.NameUser='" + user + "' ";
             pr = cn.prepareStatement(sql);
             pr.executeUpdate();
