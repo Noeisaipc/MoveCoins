@@ -27,9 +27,9 @@ public class Usuario{
 	}
 
   
-    public Usuario verificarUsuario(String user, String clave){
+   public Usuario verificarUsuario(String user, String clave){
         Usuario u=null;
-        Helper cn=null;
+        Connection cn=null;
         PreparedStatement pr=null;
         ResultSet rs=null;
         try{
@@ -128,9 +128,9 @@ public class Usuario{
 		 this.usuario_Privilegio=usuario_Privilegio;
 	}
 
-    public Boolean RegistrarUsuario(String nombre, String appat, String apmat, String user, String phone, String clave,int privi) {
+    public Boolean RegistrarUsuario(String nombre, String appat, String apmat, String user, String phone, String clave,int edad) {
                
-        Helper cn=null;
+        Connection cn=null;
         PreparedStatement pr=null;
         Boolean a;
         try{
@@ -141,8 +141,8 @@ public class Usuario{
             pr.setString(2,clave);    
             pr.setString(3,nombre); 
             pr.setString(4,appat);    
-            pr.setString(5,Apm); 
-            pr.setString(6,edad);    
+            pr.setString(5,apmat); 
+            pr.setInt(6,edad);    
              
             pr.executeUpdate();
             return a=true;
@@ -165,7 +165,7 @@ public class Usuario{
     
     public void CambiarContraseña(String user, String Clave) {
         Usuario u = null;
-        Helper cn = null;
+        Connection cn = null;
         PreparedStatement pr = null;
         ResultSet rs = null;
         try {
@@ -185,6 +185,5 @@ public class Usuario{
         }
 
     }
-
+    
 }
-
